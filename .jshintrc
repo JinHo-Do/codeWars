@@ -1,0 +1,33 @@
+{
+  "undef": true,
+  "unused": true,
+  "eqnull": true,
+  "loopfunc": true,
+  "newcap": false,
+  "esnext": true,
+  "predef": [
+
+    "document",
+    "Observable",
+    "System",
+    "ionic",
+    "angular",
+    "console",
+    "alert",
+    "GoogleMapLoaded",
+
+    "sails",
+    "process",
+    "exports",
+    "require",
+    "module",
+    "__dirname",
+    "Buffer",
+
+    "describe",
+    "it"
+
+
+
+  ]
+}
