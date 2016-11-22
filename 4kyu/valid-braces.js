@@ -23,9 +23,9 @@ function validBraces(braces){
     if (str.indexOf('()') > -1) {
       str = str.replace('()', '');
     } else if (str.indexOf('[]') > -1) {
-      str = str.replace('[]', '')
+      str = str.replace('[]', '');
     } else if (str.indexOf('{}') > -1) {
-      str = str.replace('{}', '')
+      str = str.replace('{}', '');
     } else {
       return false;
     }

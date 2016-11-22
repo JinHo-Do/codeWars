@@ -59,7 +59,7 @@ function checkAvailability(schedule, currentTime) {
         }
       }
     }
-
+    
     return true;
   }
 }

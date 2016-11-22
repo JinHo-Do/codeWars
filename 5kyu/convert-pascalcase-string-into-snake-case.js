@@ -17,21 +17,21 @@
 // toUnderscore(1);
 
 function toUnderscore(string) {
-  if (typeof string === 'number') return '' + string;
+	if (typeof string === 'number') return '' + string;
 
-  let arr = string.split('');
-  let res = [];
-  let idx = 0;
+	let arr = string.split('');
+	let res = [];
+	let idx = 0;
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== arr[i].toLowerCase()) {
-      arr[i] = arr[i].toLowerCase();
-      res.push(arr.slice(idx, i).join(''));
-      idx = i;
-    } else if (i === arr.length - 1) {
-      res.push(arr.slice(idx).join(''));
-    }
-  }
+	for (let i = 1; i < arr.length; i++) {
+		if (arr[i] !== arr[i].toLowerCase()) {
+			arr[i] = arr[i].toLowerCase();
+			res.push(arr.slice(idx, i).join(''));
+			idx = i;
+		} else if (i === arr.length - 1) {
+			res.push(arr.slice(idx).join(''));
+		}
+	}
 
-  return res.join('_').replace(res[0], res[0].toLowerCase());
+	return res.join('_').replace(res[0], res[0].toLowerCase());
 }
