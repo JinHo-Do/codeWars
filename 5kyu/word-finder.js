@@ -19,28 +19,40 @@ function Dictionary(words) {
 }
 
 Dictionary.prototype.getMatchingWords = function(pattern) {
-  let arr = [];
-  let words = this.words;
-  let find = pattern.split('');
-
-  for (let i = 0; i < words.length; i++) {
-    let check = false;
-    for (let j = 0; j < words[i].length; j++) {
-      if (words[i].length !== find.length) {
-        check = false;
-        break;
-      }
-      if (words[i][j] === find[j] || find[j] === '?') {
-        check = true;
-      } else {
-        check = false;
-        break;
+  let sameLen = this.words.filter(v => v.length === pattern.length);
+  let output = sameLen.filter(v => {
+    for (let i = 0; i < v.length; i++) {
+      if (v[i] !== pattern[i] && pattern[i] !== '?') {
+        return false;
       }
     }
-    if (check) {
-      arr.push(words[i]);
-    }
-  }
+    return true;
+  });
 
-  return arr;
+  return output;
 };
+
+  // let arr = [];
+  // let words = this.words;
+  // let find = pattern.split('');
+  //
+  // for (let i = 0; i < words.length; i++) {
+  //   let check = false;
+  //   for (let j = 0; j < words[i].length; j++) {
+  //     if (words[i].length !== find.length) {
+  //       check = false;
+  //       break;
+  //     }
+  //     if (words[i][j] === find[j] || find[j] === '?') {
+  //       check = true;
+  //     } else {
+  //       check = false;
+  //       break;
+  //     }
+  //   }
+  //   if (check) {
+  //     arr.push(words[i]);
+  //   }
+  // }
+//   return arr;
+// };
